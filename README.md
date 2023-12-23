@@ -18,8 +18,6 @@ To use the PDF Orientation Corrector, the following Python libraries need to be 
 - PyPDF2
 - pytesseract
 - pdf2image
-- PIL (Pillow)
-- reportlab
 - concurrent.futures (standard in Python 3.2+)
 
 ## Installation

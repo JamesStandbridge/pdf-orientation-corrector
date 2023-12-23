@@ -15,9 +15,7 @@ Requirements:
     - PyPDF2
     - pytesseract
     - pdf2image
-    - PIL
     - concurrent.futures
-    - reportlab
 
 Usage:
     To use this module as a script, provide the path to the input PDF 
@@ -31,18 +29,15 @@ Functions:
     - extract_rotation_angle: Extracts the necessary rotation angle for an image.
     - process_pages_in_batch: Processes a batch of pages to determine their rotation.
     - detect_and_correct_orientation: Detects and corrects the orientation of each page 
-      in a PDF file.
+        in a PDF file.
     - is_upside_down: Determines if an image is upside down based on its rotation angle.
 """
 
 
 from PyPDF2 import PdfReader, PdfWriter
-from reportlab.lib.pagesizes import letter
-from reportlab.pdfgen import canvas
 import pytesseract
 import re
 from pdf2image import convert_from_path
-from tempfile import NamedTemporaryFile
 import concurrent.futures
 
 def convert_page_to_image(pdf_path, page_num=0, dpi=200):
@@ -75,6 +70,7 @@ def extract_rotation_angle(image):
     orientation = re.search('Orientation in degrees: (\d+)', osd).group(1)
 
     return rotation_angle, int(orientation)
+
 
 def process_pages_in_batch(pdf_path, page_nums, batch_size=10):
     """

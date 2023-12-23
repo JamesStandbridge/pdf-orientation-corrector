@@ -29,7 +29,6 @@ Usage:
 Functions:
     - convert_page_to_image: Converts a specific page of a PDF to an image.
     - extract_rotation_angle: Extracts the necessary rotation angle for an image.
-    - convert_image_to_page: Adds a PIL image as a PDF page to a PdfWriter.
     - process_pages_in_batch: Processes a batch of pages to determine their rotation.
     - detect_and_correct_orientation: Detects and corrects the orientation of each page 
       in a PDF file.
@@ -76,26 +75,6 @@ def extract_rotation_angle(image):
     orientation = re.search('Orientation in degrees: (\d+)', osd).group(1)
 
     return rotation_angle, int(orientation)
-
-def convert_image_to_page(image, writer, page_size=letter):
-    """
-    Adds a PIL image as a PDF page to an existing PdfWriter.
-
-    Args:
-    image (PIL.Image): Image object to be added.
-    writer (PyPDF2.PdfWriter): PdfWriter object where the page will be added.
-    page_size (tuple): Size of the PDF page (default is A4).
-    """
-    with NamedTemporaryFile(suffix=".pdf") as temp_pdf:
-        c = canvas.Canvas(temp_pdf.name, pagesize=page_size)
-        with NamedTemporaryFile(suffix=".png") as img_temp:
-            image.save(img_temp.name, format="PNG")
-            c.drawImage(img_temp.name, 0, 0, page_size[0], page_size[1])
-            c.showPage()
-            c.save()
-
-        temp_reader = PdfReader(temp_pdf.name)
-        writer.add_page(temp_reader.pages[0])
 
 def process_pages_in_batch(pdf_path, page_nums, batch_size=10):
     """

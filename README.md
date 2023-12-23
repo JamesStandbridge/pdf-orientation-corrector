@@ -25,7 +25,7 @@ To use the PDF Orientation Corrector, the following Python libraries need to be 
 Clone this repository or download the source code. Ensure all required libraries are installed in your Python environment:
 
 ```bash
-$ pip install PyPDF2 pytesseract pdf2image Pillow reportlab
+$ pip install PyPDF2 pytesseract pdf2image
 ```
 
 Note: pytesseract requires a separate installation of Tesseract OCR.

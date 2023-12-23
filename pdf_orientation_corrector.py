@@ -52,8 +52,17 @@ def convert_page_to_image(pdf_path, page_num=0, dpi=200):
     Returns:
     PIL.Image: An image object representing the converted page.
     """
-    images = convert_from_path(pdf_path, dpi=dpi, first_page=page_num + 1, last_page=page_num + 1)
-    return images[0]
+    try:
+        images = convert_from_path(
+            pdf_path, dpi=dpi, 
+            first_page=page_num + 1, 
+            last_page=page_num + 1
+        )
+        return images[0]
+    except Exception as e:
+        print(f"Error while converting page to image : {e}")
+        return None
+
 
 def extract_rotation_angle(image):
     """
@@ -143,4 +152,9 @@ def is_upside_down(rotation_angle):
     return abs(rotation_angle - 180) < 45
 
 if __name__ == "__main__":
-    detect_and_correct_orientation('test_2-rotated.pdf', 'fixed_rotation.pdf')
+    try:
+        detect_and_correct_orientation('test_2-rotated.pdf', 'fixed_rotation.pdf')
+    except FileNotFoundError:
+        print("Erreur : Couldn't found specified PDF file.")
+    except Exception as e:
+        print(f"Unexpected error : {e}")

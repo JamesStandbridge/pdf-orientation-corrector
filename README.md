@@ -36,7 +36,8 @@ Note: pytesseract requires a separate installation of Tesseract OCR.
 
 The module can be used as a standalone script or imported into other Python scripts.
 
-### As a Standalone Script
+### As a Standalone Script
+
 Provide the path to the input PDF and the output file:
 
 ```bash

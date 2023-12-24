@@ -27,6 +27,7 @@ pip install PyPDF2 pytesseract pdf2image Pillow
 ```
 
 ## Usage
+
 The module can be used in two ways:
 
 ### As a Script

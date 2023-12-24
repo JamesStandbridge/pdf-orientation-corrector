@@ -4,7 +4,7 @@
 
 The PDF Orientation Corrector is a Python module designed for automatic detection and correction of the orientation of pages in PDF documents. It effectively combines the functionalities of PyPDF2, pytesseract, and pdf2image, supplemented with image processing techniques from PIL, to analyze and adjust the orientation of each page in a PDF file.
 
-## Key Features
+## Key Features
 
 - **Automated Page Orientation Correction**: Detects and corrects the orientation of text on each page of a PDF.
 - **Batch Processing**: Enhances performance when dealing with large documents by processing pages in batches.

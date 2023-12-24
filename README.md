@@ -1,53 +1,60 @@
 # PDF Orientation Corrector
 
-## Description
+## Overview
 
-The PDF Orientation Corrector is a Python module designed to automatically detect and correct the orientation of pages in a PDF file. It utilizes the PyPDF2 library for PDF manipulation, pytesseract for Optical Character Recognition (OCR) to detect text orientation, and pdf2image to convert PDF pages into images for analysis.
+The PDF Orientation Corrector is a Python module designed for automatic detection and correction of the orientation of pages in PDF documents. It effectively combines the functionalities of PyPDF2, pytesseract, and pdf2image, supplemented with image processing techniques from PIL, to analyze and adjust the orientation of each page in a PDF file.
 
-## Features
+## Key Features
 
-- Batch processing of PDF pages for efficient handling of large documents.
-- Automatic detection and correction of page orientation using OCR.
-- Conversion of PDF pages to images for detailed analysis.
-- Simple and easy-to-use interface for both standalone execution and integration into other Python scripts.
+- **Automated Page Orientation Correction**: Detects and corrects the orientation of text on each page of a PDF.
+- **Batch Processing**: Enhances performance when dealing with large documents by processing pages in batches.
+- **Image Preprocessing**: Uses PIL to enhance the accuracy of OCR results.
+- **Versatile Usage**: Can be run as a standalone script or imported into other Python scripts for PDF processing.
 
-## Requirements
+## Prerequisites
 
-To use the PDF Orientation Corrector, the following Python libraries need to be installed:
+Before you begin, ensure you have met the following requirements:
 
-- PyPDF2
-- pytesseract
-- pdf2image
-- concurrent.futures (standard in Python 3.2+)
+Python 3.x
+Libraries: PyPDF2, pytesseract, pdf2image, PIL (Pillow), concurrent.futures (part of the standard library)
 
 ## Installation
 
-Clone this repository or download the source code. Ensure all required libraries are installed in your Python environment:
+Clone the repository or download the source code. Install the required dependencies via pip:
 
 ```bash
-$ pip install PyPDF2 pytesseract pdf2image
+pip install PyPDF2 pytesseract pdf2image Pillow
 ```
 
-Note: pytesseract requires a separate installation of Tesseract OCR.
+## Usage
+The module can be used in two ways:
 
-## Usage
+### As a Script
 
-The module can be used as a standalone script or imported into other Python scripts.
-
-### As a Standalone Script
-
-Provide the path to the input PDF and the output file:
+Run the script from the command line, providing the necessary arguments:
 
 ```bash
-$ python pdf_orientation_corrector.py input.pdf output.pdf
+python pdf_orientation_corrector.py input.pdf output.pdf --batch_size 20 --dpi 300 --verbose
 ```
 
-### As a Module in Other Scripts
+### As a Library
 
-Import the module and use its functions in your scripts:
+Import the module in your Python script:
 
 ```python
 import pdf_orientation_corrector
-
-pdf_orientation_corrector.detect_and_correct_orientation('input.pdf', 'output.pdf')
+# Use the module functions as needed
 ```
+
+## Contributing
+
+Contributions to the PDF Orientation Corrector are welcome. Please ensure you follow the guidelines:
+
+- Fork the repository.
+- Create a new branch for each feature or improvement.
+- Send a pull request from each feature branch to the develop branch.
+
+## Author
+
+James Standbridge
+Email: james.standbridge.git@gmail.com

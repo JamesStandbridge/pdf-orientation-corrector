@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "pdf-orientation-corrector"
-version = "0.1.1"
+version = "0.1.2"
 description = "A Python module to automatically detect and correct the orientation of pages in PDF documents."
 authors = ["James Standbridge <james.standbridge.git@gmail.com>"]
 readme = "README.md"

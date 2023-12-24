@@ -47,14 +47,6 @@ import pdf_orientation_corrector
 # Use the module functions as needed
 ```
 
-## Contributing
-
-Contributions to the PDF Orientation Corrector are welcome. Please ensure you follow the guidelines:
-
-- Fork the repository.
-- Create a new branch for each feature or improvement.
-- Send a pull request from each feature branch to the develop branch.
-
 ## Author
 
 James Standbridge
